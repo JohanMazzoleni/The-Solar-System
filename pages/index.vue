@@ -151,6 +151,7 @@ export default {
 									:src="
 										require('@/assets/images/icon-source.svg')
 									"
+									alt="Source Icon"
 							/></a>
 							<a
 								class="source-link"
