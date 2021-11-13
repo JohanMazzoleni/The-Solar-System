@@ -5,7 +5,8 @@ export default {
 	data() {
 		return {
 			planetState: 0,
-			planetIndex: 0,
+			planetIndex: this.$store.state.planetStorage.planetIndex,
+			planetColor: this.$store.state.planetStorage.color,
 			planet: data,
 			unsubscribe: null,
 		};
@@ -14,9 +15,13 @@ export default {
 		var ctx = this;
 
 		ctx.unsubscribe = this.$store.subscribe((mutation, state) => {
-			if (mutation.type === "planetStorage/set") {
+			if (mutation.type === "planetStorage/setPlanet") {
 				ctx.planetIndex = state.planetStorage.planetIndex;
 				ctx.planetState = 0;
+			}
+
+			if (mutation.type === "planetStorage/setPlanetColor") {
+				ctx.planetColor = state.planetStorage.color;
 			}
 		});
 	},
@@ -32,6 +37,28 @@ export default {
 		<Header></Header>
 		<main>
 			<section class="planet">
+				<div class="menu-mobile">
+					<ul>
+						<li
+							:class="{ active: planetState == 0 }"
+							v-on:click="planetState = 0"
+						>
+							OVERVIEW
+						</li>
+						<li
+							:class="{ active: planetState == 1 }"
+							v-on:click="planetState = 1"
+						>
+							STRUCTURE
+						</li>
+						<li
+							:class="{ active: planetState == 2 }"
+							v-on:click="planetState = 2"
+						>
+							SURFACE
+						</li>
+					</ul>
+				</div>
 				<div class="image" v-if="planetState == 0">
 					<img
 						:src="planet[planetIndex].images['planet']"

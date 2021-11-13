@@ -1,9 +1,13 @@
 export const state = () => ({
-    planetIndex: 0
+    planetIndex: 0,
+    color: 'DEF4FC'
 })
 
 export const mutations = {
-    set(state, planet) {
+    setPlanet(state, planet) {
         state.planetIndex = planet;
+    },
+    setPlanetColor(state, color) {
+        state.color = color;
     },
 }

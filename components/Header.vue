@@ -43,7 +43,8 @@ export default {
 		updatePlanet(planet) {
 			var ctx = this;
 			ctx.openMobileMenu = 0;
-			ctx.$store.commit("planetStorage/set", planet);
+			ctx.$store.commit("planetStorage/setPlanet", planet);
+			ctx.$store.commit("planetStorage/setPlanetColor", ctx.planet[planet].color);
 		},
 	},
 };
