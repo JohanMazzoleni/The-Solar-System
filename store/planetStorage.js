@@ -1,18 +1,18 @@
 export const state = () => ({
-    planetIndex: 0,
+    planetIndex: 2,
     color: {
-        primary: '979797',
-        secondary: '419EBB',
+        primary: '545BFE',
+        secondary: '6D2ED5',
     },
     size: {
-        mobile: 111,
-        tablet: 184,
-        desktop: 290,
+        mobile: 173,
+        tablet: 285,
+        desktop: 450,
     },
     position: {
-        mobile: -64,
-        tablet: -95,
-        desktop: -127,
+        mobile: -33,
+        tablet: -42,
+        desktop: -42,
     },
     menuOpen: 0,
 })
