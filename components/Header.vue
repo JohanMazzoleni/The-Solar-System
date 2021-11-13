@@ -3,41 +3,54 @@ export default {
 	data() {
 		return {
 			openMobileMenu: 0,
-			planet: {
-				mercury: {
+			planet: [
+				{
 					name: "MERCURY",
 					color: "DEF4FC",
 				},
-				venus: {
+				{
 					name: "VENUS",
 					color: "F7CC7F",
 				},
-				earth: {
+				{
 					name: "EARTH",
 					color: "545BFE",
 				},
-				mars: {
+				{
 					name: "MARS",
 					color: "FF6A45",
 				},
-				jupiter: {
+				{
 					name: "JUPITER",
 					color: "ECAD7A",
 				},
-				saturn: {
+				{
 					name: "SATURN",
 					color: "FCCB6B",
 				},
-				uranus: {
+				{
 					name: "URANUS",
 					color: "65F0D5",
 				},
-				neptune: {
+				{
 					name: "NEPTUNE",
-					color: "497EFA"
-				}
-			},
+					color: "497EFA",
+				},
+			],
 		};
+	},
+	mounted() {
+		// var ctx = this;
+		// console.log(ctx.$store.state.planetStorage.planetSelected);
+		// ctx.$store.commit("planetStorage/set", "mdr");
+		// console.log(ctx.$store.state.planetStorage.planetSelected);
+	},
+	methods: {
+		updatePlanet(planet) {
+			var ctx = this;
+			ctx.openMobileMenu = 0;
+			ctx.$store.commit("planetStorage/set", planet);
+		},
 	},
 };
 </script>
@@ -50,9 +63,11 @@ export default {
 		<nav>
 			<ul class="desktop-nav">
 				<li v-for="(value, index) in planet" :key="index">
-					<NuxtLink :to="'/' + index">{{
-						value.name
-					}}</NuxtLink>
+					<a
+						href="javascript:void(1)"
+						v-on:click="updatePlanet(index)"
+						>{{ value.name }}</a
+					>
 				</li>
 			</ul>
 			<div
@@ -74,9 +89,11 @@ export default {
 								:style="'background: #' + value.color"
 							></div>
 							<div class="name">
-								<NuxtLink :to="'/' + index">{{
-									value.name
-								}}</NuxtLink>
+								<a
+									v-on:click="updatePlanet(index)"
+									href="javascript:void(1)"
+									>{{ value.name }}</a
+								>
 							</div>
 						</div>
 						<div

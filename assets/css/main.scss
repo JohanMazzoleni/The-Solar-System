@@ -2,6 +2,7 @@
 @import "./responsive/mixins.scss";
 @import "./colors.scss";
 @import url("https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Spartan:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Spartan&display=swap");
 
 body {
     margin: 0;
@@ -103,7 +104,7 @@ h2 {
                         .name {
                             margin-left: 25px;
                             font-size: 20px;
-                        }                        
+                        }
                     }
 
                     .right {
@@ -113,6 +114,8 @@ h2 {
                     a {
                         text-decoration: none;
                         color: rgba(255, 255, 255, 0.842);
+                        letter-spacing: 1px;
+                        user-select: none;
                     }
                 }
             }
@@ -135,6 +138,8 @@ h2 {
                 a {
                     text-decoration: none;
                     color: rgba(255, 255, 255, 0.609);
+                    letter-spacing: 1.36px;
+                    user-select: none;
                 }
 
                 &:hover::after {
@@ -145,6 +150,99 @@ h2 {
                     border-bottom: 5px solid $cyan;
                     width: 100%;
                 }
+            }
+        }
+    }
+}
+
+.planet {
+    display: flex;
+    justify-content: center;
+    .image {
+        margin-top: 242px;
+
+        img {
+            width: 290px;
+            height: 290px;
+        }
+
+        .sub-image {
+            position: relative;
+            img {
+                position: relative;
+                width: 163px;
+                height: 199px;
+                left: 50%;
+                transform: translate(-50%);
+                top: -75px;
+            }
+        }
+    }
+
+    .detail {
+        margin-left: 300px;
+        margin-top: 126px;
+
+        h2 {
+            font-size: 80px;
+            margin: 0;
+        }
+
+        .description {
+            color: rgba(255, 255, 255, 0.609);
+            width: 350px;
+            font-weight: 400;
+        }
+
+        .source {
+            color: rgba(255, 255, 255, 0.609);
+            width: 350px;
+
+            .source-link {
+                text-decoration: none;
+                color: rgba(255, 255, 255, 0.609);
+            }
+
+            .underline {
+                font-weight: bold;
+                text-decoration: underline;
+            }
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            .card {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                width: 350px;
+                height: 48px;
+                margin-top: 16px;
+
+                .number {
+                    margin-left: 28px;
+                    font-weight: bold;
+                    color: rgba(255, 255, 255, 0.4);
+                    letter-spacing: 2.57px;
+                }
+
+                .name {
+                    font-weight: bold;
+                    color: $white;
+                    margin-left: 28px;
+                    font-size: 12px;
+                    letter-spacing: 2.57px;
+                }
+            }
+
+            .active {
+                box-shadow: 0 0 0 2px #419ebb;
+                background: #419ebb;
+            }
+
+            .not-active {
+                box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.561);
             }
         }
     }
