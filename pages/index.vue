@@ -9,6 +9,7 @@ export default {
 			planetColor: this.$store.state.planetStorage.color,
 			planetSize: this.$store.state.planetStorage.size,
 			planet: data,
+			menuOpen: this.$store.state.planetStorage.menuOpen,
 			test: "red",
 			unsubscribe: null,
 			state: [
@@ -39,7 +40,10 @@ export default {
 
 			if (mutation.type === "planetStorage/setPlanetSize") {
 				ctx.planetSize = state.planetStorage.size;
-				console.log(ctx.planetSize);
+			}
+
+			if (mutation.type === "planetStorage/setMenu") {
+				ctx.menuOpen = state.planetStorage.menuOpen;
 			}
 		});
 	},
@@ -53,7 +57,7 @@ export default {
 <template>
 	<div>
 		<Header></Header>
-		<main>
+		<main v-if="!menuOpen">
 			<section class="planet">
 				<div class="menu-mobile">
 					<ul>

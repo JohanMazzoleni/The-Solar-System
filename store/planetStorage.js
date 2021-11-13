@@ -6,6 +6,7 @@ export const state = () => ({
         tablet: 184,
         desktop: 290,
     },
+    menuOpen: 0,
 })
 
 export const mutations = {
@@ -18,5 +19,9 @@ export const mutations = {
     setPlanetSize(state, size)
     {
         state.size = size;
-    }
+    },
+    setMenu(state, data)
+    {
+        state.menuOpen = data;
+    },
 }

@@ -93,6 +93,11 @@ export default {
 				ctx.planet[planet].size
 			);
 		},
+		updateMenu() {
+			var ctx = this;
+			ctx.openMobileMenu = !ctx.openMobileMenu;
+			ctx.$store.commit("planetStorage/setMenu", ctx.openMobileMenu);
+		},
 	},
 };
 </script>
@@ -119,7 +124,7 @@ export default {
 			<div
 				class="mobile-nav"
 				title="Navigation"
-				v-on:click="openMobileMenu = !openMobileMenu"
+				v-on:click="updateMenu"
 			>
 				<img
 					:src="require('@/assets/images/icon-hamburger.svg')"
