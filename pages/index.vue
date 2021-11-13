@@ -57,49 +57,51 @@ export default {
 					</div>
 				</div>
 				<div class="detail">
-					<h2>{{ planet[planetIndex].name.toUpperCase() }}</h2>
-					<p class="description" v-if="planetState == 0">
-						{{ planet[planetIndex].overview.content }}
-					</p>
-					<p class="description" v-if="planetState == 1">
-						{{ planet[planetIndex].structure.content }}
-					</p>
-					<p class="description" v-if="planetState == 2">
-						{{ planet[planetIndex].geology.content }}
-					</p>
-					<p class="source">
-						Source:
-						<a
-							class="source-link"
-							:href="planet[planetIndex].overview.source"
-							v-if="planetState == 0"
-							><span class="underline"> Wikipedia</span>
-							<img
-								:src="
-									require('@/assets/images/icon-source.svg')
-								"
-						/></a>
-						<a
-							class="source-link"
-							:href="planet[planetIndex].structure.source"
-							v-if="planetState == 1"
-							><span class="underline"> Wikipedia</span>
-							<img
-								:src="
-									require('@/assets/images/icon-source.svg')
-								"
-						/></a>
-						<a
-							class="source-link"
-							:href="planet[planetIndex].geology.source"
-							v-if="planetState == 2"
-							><span class="underline"> Wikipedia</span>
-							<img
-								:src="
-									require('@/assets/images/icon-source.svg')
-								"
-						/></a>
-					</p>
+					<div class="information">
+						<h2>{{ planet[planetIndex].name.toUpperCase() }}</h2>
+						<p class="description" v-if="planetState == 0">
+							{{ planet[planetIndex].overview.content }}
+						</p>
+						<p class="description" v-if="planetState == 1">
+							{{ planet[planetIndex].structure.content }}
+						</p>
+						<p class="description" v-if="planetState == 2">
+							{{ planet[planetIndex].geology.content }}
+						</p>
+						<p class="source">
+							Source:
+							<a
+								class="source-link"
+								:href="planet[planetIndex].overview.source"
+								v-if="planetState == 0"
+								><span class="underline"> Wikipedia</span>
+								<img
+									:src="
+										require('@/assets/images/icon-source.svg')
+									"
+							/></a>
+							<a
+								class="source-link"
+								:href="planet[planetIndex].structure.source"
+								v-if="planetState == 1"
+								><span class="underline"> Wikipedia</span>
+								<img
+									:src="
+										require('@/assets/images/icon-source.svg')
+									"
+							/></a>
+							<a
+								class="source-link"
+								:href="planet[planetIndex].geology.source"
+								v-if="planetState == 2"
+								><span class="underline"> Wikipedia</span>
+								<img
+									:src="
+										require('@/assets/images/icon-source.svg')
+									"
+							/></a>
+						</p>
+					</div>
 
 					<div class="menu">
 						<div
