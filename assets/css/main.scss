@@ -5,7 +5,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan&display=swap");
 
 :root {
-    --planetColor: white;
+    --planetPrimaryColor: white;
+    --planetSecondaryColor: white;
+
     --planetSizeMobile: 111px;
     --planetSizeTablet: 184px;
     --planetSizeDesktop: 290px;
@@ -13,6 +15,8 @@
     --planetPositionMobile: -64px;
     --planetPositionTablet: -95px;
     --planetPositionDesktop: -127px;
+
+    --planetHover: white;
 }
 
 body {
@@ -162,7 +166,7 @@ h2 {
                         position: absolute;
                         left: 0;
                         top: -36px;
-                        border-bottom: 5px solid $cyan;
+                        border-bottom: 5px solid var(--planetSecondaryColor);
                         width: 100%;
                     }
                 }
@@ -224,7 +228,7 @@ h2 {
                     position: absolute;
                     left: 0;
                     bottom: 0;
-                    border-bottom: 5px solid var(--planetColor);
+                    border-bottom: 5px solid var(--planetSecondaryColor);
                     width: 100%;
                 }
             }
@@ -470,8 +474,8 @@ h2 {
             }
 
             .active {
-                box-shadow: 0 0 0 2px #419ebb;
-                background: #419ebb;
+                box-shadow: 0 0 0 2px var(--planetSecondaryColor);
+                background: var(--planetSecondaryColor);
             }
 
             .not-active {

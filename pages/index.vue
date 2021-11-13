@@ -51,8 +51,6 @@ export default {
 				ctx.planetPosition = state.planetStorage.position;
 			}
 		});
-
-		console.log(ctx.planetPosition);
 	},
 	beforeUnmount() {
 		var ctx = this;
@@ -62,7 +60,14 @@ export default {
 </script>
 
 <template>
-	<div>
+	<div
+		:style="
+			'--planetPrimaryColor: #' +
+			planetColor.primary +
+			';--planetSecondaryColor: #' +
+			planetColor.secondary
+		"
+	>
 		<Header></Header>
 		<main v-if="!menuOpen">
 			<section class="planet">
@@ -73,12 +78,9 @@ export default {
 							:key="index"
 							v-on:click="planetState = index"
 						>
-							<span
-								v-if="planetState == index"
-								class="active"
-								:style="'--planetColor: #' + planetColor"
-								>{{ value.name }}</span
-							>
+							<span v-if="planetState == index" class="active">{{
+								value.name
+							}}</span>
 							<span v-else>{{ value.name }}</span>
 						</li>
 					</ul>
@@ -114,7 +116,15 @@ export default {
 						<img
 							:src="planet[planetIndex].images['geology']"
 							:alt="planet[planetIndex].name + ' Geology'"
-							:style="'--planetPositionMobile: ' + planetPosition.mobile + 'px;--planetPositionTablet: ' + planetPosition.tablet + 'px;--planetPositionDesktop: ' + planetPosition.desktop + 'px;'"
+							:style="
+								'--planetPositionMobile: ' +
+								planetPosition.mobile +
+								'px;--planetPositionTablet: ' +
+								planetPosition.tablet +
+								'px;--planetPositionDesktop: ' +
+								planetPosition.desktop +
+								'px;'
+							"
 						/>
 					</div>
 				</div>
@@ -165,7 +175,7 @@ export default {
 						</p>
 					</div>
 
-					<div class="menu">
+					<div class="menu" :style="'--planetColor: #' + planetColor">
 						<div
 							:class="{
 								card: 1,

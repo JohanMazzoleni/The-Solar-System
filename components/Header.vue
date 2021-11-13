@@ -6,7 +6,10 @@ export default {
 			planet: [
 				{
 					name: "MERCURY",
-					color: "DEF4FC",
+					color: {
+						primary: "979797",
+						secondary: "419EBB",
+					},
 					size: {
 						mobile: 111,
 						tablet: 184,
@@ -20,7 +23,10 @@ export default {
 				},
 				{
 					name: "VENUS",
-					color: "F7CC7F",
+					color: {
+						primary: "F7CC7F",
+						secondary: "EDA249",
+					},
 					size: {
 						mobile: 154,
 						tablet: 253,
@@ -34,7 +40,10 @@ export default {
 				},
 				{
 					name: "EARTH",
-					color: "545BFE",
+					color: {
+						primary: "545BFE",
+						secondary: "6D2ED5",
+					},
 					size: {
 						mobile: 173,
 						tablet: 285,
@@ -48,7 +57,10 @@ export default {
 				},
 				{
 					name: "MARS",
-					color: "FF6A45",
+					color: {
+						primary: "FF6A45",
+						secondary: "D14C32",
+					},
 					size: {
 						mobile: 129,
 						tablet: 213,
@@ -62,7 +74,10 @@ export default {
 				},
 				{
 					name: "JUPITER",
-					color: "ECAD7A",
+					color: {
+						primary: "ECAD7A",
+						secondary: "D83A34",
+					},
 					size: {
 						mobile: 224,
 						tablet: 369,
@@ -76,7 +91,10 @@ export default {
 				},
 				{
 					name: "SATURN",
-					color: "FCCB6B",
+					color: {
+						primary: "FCCB6B",
+						secondary: "CD5120",
+					},
 					size: {
 						mobile: 224,
 						tablet: 369,
@@ -90,7 +108,10 @@ export default {
 				},
 				{
 					name: "URANUS",
-					color: "65F0D5",
+					color: {
+						primary: "65F0D5",
+						secondary: "1EC1A2",
+					},
 					size: {
 						mobile: 176,
 						tablet: 290,
@@ -104,7 +125,10 @@ export default {
 				},
 				{
 					name: "NEPTUNE",
-					color: "497EFA",
+					color: {
+						primary: "497EFA",
+						secondary: "2D68F0",
+					},
 					size: {
 						mobile: 173,
 						tablet: 285,
@@ -179,7 +203,7 @@ export default {
 						<div class="left">
 							<div
 								class="planet"
-								:style="'background: #' + value.color"
+								:style="'background: #' + value.color.primary"
 							></div>
 							<div class="name">
 								<a

@@ -1,6 +1,9 @@
 export const state = () => ({
     planetIndex: 0,
-    color: 'DEF4FC',
+    color: {
+        primary: '979797',
+        secondary: '419EBB',
+    },
     size: {
         mobile: 111,
         tablet: 184,
