@@ -8,6 +8,7 @@ export default {
 			planetIndex: this.$store.state.planetStorage.planetIndex,
 			planetColor: this.$store.state.planetStorage.color,
 			planetSize: this.$store.state.planetStorage.size,
+			planetPosition: this.$store.state.planetStorage.position,
 			planet: data,
 			menuOpen: this.$store.state.planetStorage.menuOpen,
 			test: "red",
@@ -45,7 +46,13 @@ export default {
 			if (mutation.type === "planetStorage/setMenu") {
 				ctx.menuOpen = state.planetStorage.menuOpen;
 			}
+
+			if (mutation.type === "planetStorage/setPlanetPosition") {
+				ctx.planetPosition = state.planetStorage.position;
+			}
 		});
+
+		console.log(ctx.planetPosition);
 	},
 	beforeUnmount() {
 		var ctx = this;
@@ -107,6 +114,7 @@ export default {
 						<img
 							:src="planet[planetIndex].images['geology']"
 							:alt="planet[planetIndex].name + ' Geology'"
+							:style="'--planetPositionMobile: ' + planetPosition.mobile + 'px;--planetPositionTablet: ' + planetPosition.tablet + 'px;--planetPositionDesktop: ' + planetPosition.desktop + 'px;'"
 						/>
 					</div>
 				</div>

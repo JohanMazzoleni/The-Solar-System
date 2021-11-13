@@ -9,6 +9,10 @@
     --planetSizeMobile: 111px;
     --planetSizeTablet: 184px;
     --planetSizeDesktop: 290px;
+
+    --planetPositionMobile: -64px;
+    --planetPositionTablet: -95px;
+    --planetPositionDesktop: -127px;
 }
 
 body {
@@ -265,21 +269,26 @@ h2 {
                 height: 199px;
                 left: 50%;
                 transform: translate(-50%);
-                top: -75px;
 
                 @include mobile {
-                    top: -35px;
                     width: 81.5px;
                     height: 99.5px;
                     position: absolute;
+                    bottom: var(--planetPositionMobile);
                 }
 
                 @include tablet {
                     position: absolute;
+                    width: 122.25px;
+                    height: 149.25px;
+                    bottom: var(--planetPositionTablet);
                 }
 
                 @include desktop {
                     position: absolute;
+                    width: 163px;
+                    height: 199px;
+                    bottom: var(--planetPositionDesktop);
                 }
             }
         }

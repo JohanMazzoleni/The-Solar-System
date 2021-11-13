@@ -6,6 +6,11 @@ export const state = () => ({
         tablet: 184,
         desktop: 290,
     },
+    position: {
+        mobile: -64,
+        tablet: -95,
+        desktop: -127,
+    },
     menuOpen: 0,
 })
 
@@ -24,4 +29,8 @@ export const mutations = {
     {
         state.menuOpen = data;
     },
+    setPlanetPosition(state, pos)
+    {
+        state.position = pos;
+    }
 }

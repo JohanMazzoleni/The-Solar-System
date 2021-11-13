@@ -12,6 +12,11 @@ export default {
 						tablet: 184,
 						desktop: 290,
 					},
+					position: {
+						mobile: -64,
+						tablet: -95,
+						desktop: -127,
+					},
 				},
 				{
 					name: "VENUS",
@@ -20,6 +25,11 @@ export default {
 						mobile: 154,
 						tablet: 253,
 						desktop: 400,
+					},
+					position: {
+						mobile: -49,
+						tablet: -70,
+						desktop: -70,
 					},
 				},
 				{
@@ -30,6 +40,11 @@ export default {
 						tablet: 285,
 						desktop: 450,
 					},
+					position: {
+						mobile: -33,
+						tablet: -42,
+						desktop: -42,
+					},
 				},
 				{
 					name: "MARS",
@@ -38,6 +53,11 @@ export default {
 						mobile: 129,
 						tablet: 213,
 						desktop: 336,
+					},
+					position: {
+						mobile: -60,
+						tablet: -89,
+						desktop: -104,
 					},
 				},
 				{
@@ -48,6 +68,11 @@ export default {
 						tablet: 369,
 						desktop: 582,
 					},
+					position: {
+						mobile: -12,
+						tablet: -9,
+						desktop: 20,
+					},
 				},
 				{
 					name: "SATURN",
@@ -56,6 +81,11 @@ export default {
 						mobile: 224,
 						tablet: 369,
 						desktop: 582,
+					},
+					position: {
+						mobile: 0,
+						tablet: 4,
+						desktop: 39,
 					},
 				},
 				{
@@ -66,6 +96,11 @@ export default {
 						tablet: 290,
 						desktop: 458,
 					},
+					position: {
+						mobile: -25,
+						tablet: -25,
+						desktop: -8,
+					},
 				},
 				{
 					name: "NEPTUNE",
@@ -74,6 +109,11 @@ export default {
 						mobile: 173,
 						tablet: 285,
 						desktop: 450,
+					},
+					position: {
+						mobile: -32,
+						tablet: -40,
+						desktop: -40,
 					},
 				},
 			],
@@ -91,6 +131,10 @@ export default {
 			ctx.$store.commit(
 				"planetStorage/setPlanetSize",
 				ctx.planet[planet].size
+			);
+			ctx.$store.commit(
+				"planetStorage/setPlanetPosition",
+				ctx.planet[planet].position
 			);
 
 			ctx.$store.commit("planetStorage/setMenu", 0);
