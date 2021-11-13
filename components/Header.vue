@@ -56,7 +56,7 @@ export default {
 		</div>
 		<nav>
 			<ul class="desktop-nav">
-				<li v-for="(value, index) in planet" :key="index">
+				<li class="underline" v-for="(value, index) in planet" :key="index">
 					<a
 						href="javascript:void(1)"
 						v-on:click="updatePlanet(index)"

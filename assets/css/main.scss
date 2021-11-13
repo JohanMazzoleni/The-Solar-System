@@ -141,14 +141,18 @@ h2 {
                     letter-spacing: 1.36px;
                     user-select: none;
                 }
+            }
 
-                &:hover::after {
-                    content: "";
-                    position: absolute;
-                    left: 0;
-                    top: -36px;
-                    border-bottom: 5px solid $cyan;
-                    width: 100%;
+            @include desktop {
+                .underline {
+                    &:hover::after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: -36px;
+                        border-bottom: 5px solid $cyan;
+                        width: 100%;
+                    }
                 }
             }
         }
