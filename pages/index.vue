@@ -175,7 +175,7 @@ export default {
 						</p>
 					</div>
 
-					<div class="menu" :style="'--planetColor: #' + planetColor">
+					<div class="menu">
 						<div
 							:class="{
 								card: 1,
