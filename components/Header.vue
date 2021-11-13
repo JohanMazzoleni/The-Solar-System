@@ -53,9 +53,9 @@ export default {
 					name: "SATURN",
 					color: "FCCB6B",
 					size: {
-						mobile: 256,
-						tablet: 422,
-						desktop: 666.09,
+						mobile: 224,
+						tablet: 369,
+						desktop: 582,
 					},
 				},
 				{
