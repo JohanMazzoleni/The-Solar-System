@@ -195,12 +195,13 @@ h2 {
         }
 
         .source {
-            color: rgba(255, 255, 255, 0.609);
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.4);
             width: 350px;
 
             .source-link {
                 text-decoration: none;
-                color: rgba(255, 255, 255, 0.609);
+                color: rgba(255, 255, 255, 0.5);
             }
 
             .underline {
@@ -243,6 +244,10 @@ h2 {
 
             .not-active {
                 box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.561);
+                &:hover {
+                    background: rgba(255, 255, 255, 0.2);
+                    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+                }
             }
         }
     }

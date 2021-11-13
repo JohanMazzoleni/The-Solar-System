@@ -57,7 +57,7 @@ export default {
 					</div>
 				</div>
 				<div class="detail">
-					<h2>{{ planet[planetIndex].name }}</h2>
+					<h2>{{ planet[planetIndex].name.toUpperCase() }}</h2>
 					<p class="description" v-if="planetState == 0">
 						{{ planet[planetIndex].overview.content }}
 					</p>
