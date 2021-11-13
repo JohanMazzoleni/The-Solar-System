@@ -92,6 +92,8 @@ export default {
 				"planetStorage/setPlanetSize",
 				ctx.planet[planet].size
 			);
+
+			ctx.$store.commit("planetStorage/setMenu", 0);
 		},
 		updateMenu() {
 			var ctx = this;
@@ -121,11 +123,7 @@ export default {
 					>
 				</li>
 			</ul>
-			<div
-				class="mobile-nav"
-				title="Navigation"
-				v-on:click="updateMenu"
-			>
+			<div class="mobile-nav" title="Navigation" v-on:click="updateMenu">
 				<img
 					:src="require('@/assets/images/icon-hamburger.svg')"
 					alt="Navigation"
