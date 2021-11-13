@@ -39,12 +39,6 @@ export default {
 			],
 		};
 	},
-	mounted() {
-		// var ctx = this;
-		// console.log(ctx.$store.state.planetStorage.planetSelected);
-		// ctx.$store.commit("planetStorage/set", "mdr");
-		// console.log(ctx.$store.state.planetStorage.planetSelected);
-	},
 	methods: {
 		updatePlanet(planet) {
 			var ctx = this;
