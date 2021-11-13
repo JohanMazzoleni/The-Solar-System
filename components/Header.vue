@@ -7,34 +7,74 @@ export default {
 				{
 					name: "MERCURY",
 					color: "DEF4FC",
+					size: {
+						mobile: 111,
+						tablet: 184,
+						desktop: 290,
+					},
 				},
 				{
 					name: "VENUS",
 					color: "F7CC7F",
+					size: {
+						mobile: 154,
+						tablet: 253,
+						desktop: 400,
+					},
 				},
 				{
 					name: "EARTH",
 					color: "545BFE",
+					size: {
+						mobile: 173,
+						tablet: 285,
+						desktop: 450,
+					},
 				},
 				{
 					name: "MARS",
 					color: "FF6A45",
+					size: {
+						mobile: 129,
+						tablet: 213,
+						desktop: 336,
+					},
 				},
 				{
 					name: "JUPITER",
 					color: "ECAD7A",
+					size: {
+						mobile: 224,
+						tablet: 369,
+						desktop: 582,
+					},
 				},
 				{
 					name: "SATURN",
 					color: "FCCB6B",
+					size: {
+						mobile: 256,
+						tablet: 422,
+						desktop: 666.09,
+					},
 				},
 				{
 					name: "URANUS",
 					color: "65F0D5",
+					size: {
+						mobile: 176,
+						tablet: 290,
+						desktop: 458,
+					},
 				},
 				{
 					name: "NEPTUNE",
 					color: "497EFA",
+					size: {
+						mobile: 173,
+						tablet: 285,
+						desktop: 450,
+					},
 				},
 			],
 		};
@@ -44,7 +84,14 @@ export default {
 			var ctx = this;
 			ctx.openMobileMenu = 0;
 			ctx.$store.commit("planetStorage/setPlanet", planet);
-			ctx.$store.commit("planetStorage/setPlanetColor", ctx.planet[planet].color);
+			ctx.$store.commit(
+				"planetStorage/setPlanetColor",
+				ctx.planet[planet].color
+			);
+			ctx.$store.commit(
+				"planetStorage/setPlanetSize",
+				ctx.planet[planet].size
+			);
 		},
 	},
 };
@@ -57,7 +104,11 @@ export default {
 		</div>
 		<nav>
 			<ul class="desktop-nav">
-				<li class="underline" v-for="(value, index) in planet" :key="index">
+				<li
+					class="underline"
+					v-for="(value, index) in planet"
+					:key="index"
+				>
 					<a
 						href="javascript:void(1)"
 						v-on:click="updatePlanet(index)"

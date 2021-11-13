@@ -4,6 +4,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Spartan:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Spartan&display=swap");
 
+
+:root {
+    --planetColor: white;
+    --planetSizeMobile: 111px;
+    --planetSizeTablet: 184px;
+    --planetSizeDesktop: 290px;
+}
+
 body {
     margin: 0;
     font-family: "Spartan", sans-serif;
@@ -208,7 +216,14 @@ h2 {
 
             .active {
                 color: white;
-                border-bottom: 4px solid $cyan;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    border-bottom: 5px solid var(--planetColor);
+                    width: 100%;
+                }
             }
         }
     }
@@ -227,22 +242,19 @@ h2 {
         }
 
         img {
-            width: 290px;
-            height: 290px;
-
             @include mobile {
-                width: 111px;
-                height: 111px;
+                width: var(--planetSizeMobile);
+                height: var(--planetSizeMobile);
             }
 
             @include tablet {
-                width: 184px;
-                height: 184px;
+                width: var(--planetSizeTablet);
+                height: var(--planetSizeTablet);
             }
 
             @include desktop {
-                width: 290px;
-                height: 290px;
+                width: var(--planetSizeDesktop);
+                height: var(--planetSizeDesktop);
             }
         }
 

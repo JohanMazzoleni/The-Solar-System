@@ -7,8 +7,21 @@ export default {
 			planetState: 0,
 			planetIndex: this.$store.state.planetStorage.planetIndex,
 			planetColor: this.$store.state.planetStorage.color,
+			planetSize: this.$store.state.planetStorage.size,
 			planet: data,
+			test: "red",
 			unsubscribe: null,
+			state: [
+				{
+					name: "OVERVIEW",
+				},
+				{
+					name: "STRUCTURE",
+				},
+				{
+					name: "SURFACE",
+				},
+			],
 		};
 	},
 	mounted() {
@@ -22,6 +35,11 @@ export default {
 
 			if (mutation.type === "planetStorage/setPlanetColor") {
 				ctx.planetColor = state.planetStorage.color;
+			}
+
+			if (mutation.type === "planetStorage/setPlanetSize") {
+				ctx.planetSize = state.planetStorage.size;
+				console.log(ctx.planetSize);
 			}
 		});
 	},
@@ -40,43 +58,48 @@ export default {
 				<div class="menu-mobile">
 					<ul>
 						<li
-							:class="{ active: planetState == 0 }"
-							v-on:click="planetState = 0"
+							v-for="(value, index) in state"
+							:key="index"
+							v-on:click="planetState = index"
 						>
-							OVERVIEW
-						</li>
-						<li
-							:class="{ active: planetState == 1 }"
-							v-on:click="planetState = 1"
-						>
-							STRUCTURE
-						</li>
-						<li
-							:class="{ active: planetState == 2 }"
-							v-on:click="planetState = 2"
-						>
-							SURFACE
+							<span
+								v-if="planetState == index"
+								class="active"
+								:style="'--planetColor: #' + planetColor"
+								>{{ value.name }}</span
+							>
+							<span v-else>{{ value.name }}</span>
 						</li>
 					</ul>
 				</div>
-				<div class="image" v-if="planetState == 0">
+				<div
+					class="image"
+					:style="
+						'--planetSizeMobile: ' +
+						planetSize.mobile +
+						'px;--planetSizeTablet: ' +
+						planetSize.tablet +
+						'px;--planetSizeDesktop:' +
+						planetSize.desktop +
+						'px;'
+					"
+				>
 					<img
 						:src="planet[planetIndex].images['planet']"
 						:alt="planet[planetIndex].name"
+						v-if="planetState == 0"
 					/>
-				</div>
-				<div class="image" v-if="planetState == 1">
 					<img
 						:src="planet[planetIndex].images['internal']"
 						:alt="planet[planetIndex].name"
+						v-if="planetState == 1"
 					/>
-				</div>
-				<div class="image" v-if="planetState == 2">
 					<img
 						:src="planet[planetIndex].images['planet']"
 						:alt="planet[planetIndex].name"
+						v-if="planetState == 2"
 					/>
-					<div class="sub-image">
+					<div class="sub-image" v-if="planetState == 2">
 						<img
 							:src="planet[planetIndex].images['geology']"
 							:alt="planet[planetIndex].name + ' Geology'"
