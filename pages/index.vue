@@ -190,6 +190,26 @@ export default {
 					</div>
 				</div>
 			</section>
+			<div class="about">
+				<div class="card">
+					<div class="title">ROTATION TIME</div>
+					<div class="data">{{ planet[planetIndex].rotation }}</div>
+				</div>
+				<div class="card">
+					<div class="title">REVOLUTION TIME</div>
+					<div class="data">{{ planet[planetIndex].revolution }}</div>
+				</div>
+				<div class="card">
+					<div class="title">RADIUS</div>
+					<div class="data">{{ planet[planetIndex].radius }}</div>
+				</div>
+				<div class="card">
+					<div class="title">AVERAGE TEMP.</div>
+					<div class="data">
+						{{ planet[planetIndex].temperature }}
+					</div>
+				</div>
+			</div>
 		</main>
 	</div>
 </template>

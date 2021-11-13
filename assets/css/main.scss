@@ -4,7 +4,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Spartan:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Spartan&display=swap");
 
-
 :root {
     --planetColor: white;
     --planetSizeMobile: 111px;
@@ -280,7 +279,7 @@ h2 {
                 }
 
                 @include desktop {
-                    position: relative;
+                    position: absolute;
                 }
             }
         }
@@ -288,7 +287,7 @@ h2 {
 
     .detail {
         margin-left: 300px;
-        margin-top: 126px;
+        margin-top: 85px;
 
         @include mobile {
             text-align: center;
@@ -307,7 +306,7 @@ h2 {
 
         @include desktop {
             display: block;
-            margin-top: 126px;
+            margin-top: 85px;
             margin-left: 300px;
             width: auto;
         }
@@ -473,6 +472,38 @@ h2 {
                     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
                 }
             }
+        }
+    }
+}
+
+.about {
+    margin-top: 87px;
+    margin-bottom: 56px;
+    display: flex;
+    justify-content: center;
+
+    .card {
+        width: 255px;
+        height: 128px;
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+        color: $white;
+        margin-left: 30px;
+        .title {
+            margin-top: 20px;
+            margin-left: 23px;
+            font-size: 11px;
+            line-height: 25px;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .data {
+            margin-top: 4px;
+            font-family: "Antonio", sans-serif;
+            font-size: 40px;
+            letter-spacing: -1.5px;
+            margin-left: 23px;
+            text-transform: uppercase;
         }
     }
 }
