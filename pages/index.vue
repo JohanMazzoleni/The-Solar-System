@@ -26,13 +26,26 @@ export default {
 			],
 		};
 	},
+	methods: {
+		preloadImage: function (url) {
+			const img = new Image();
+			img.src = url;
+			return img;
+		},
+	},
 	mounted() {
 		var ctx = this;
+
+		ctx.preloadImage(ctx.planet[ctx.planetIndex].images['internal']);
+		ctx.preloadImage(ctx.planet[ctx.planetIndex].images['geology']);
 
 		ctx.unsubscribe = this.$store.subscribe((mutation, state) => {
 			if (mutation.type === "planetStorage/setPlanet") {
 				ctx.planetIndex = state.planetStorage.planetIndex;
 				ctx.planetState = 0;
+
+				ctx.preloadImage(ctx.planet[ctx.planetIndex].images['internal']);
+				ctx.preloadImage(ctx.planet[ctx.planetIndex].images['geology']);
 			}
 
 			if (mutation.type === "planetStorage/setPlanetColor") {
