@@ -1,6 +1,6 @@
 export default {
 	head: {
-		title: "La Voie lactée",
+		title: "The Solar System",
 		htmlAttrs: {
 			lang: "fr"
 		},
